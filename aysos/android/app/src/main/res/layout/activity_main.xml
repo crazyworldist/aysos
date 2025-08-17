@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <io.github.sceneview.ar.ArSceneView
+        android:id="@+id/arSceneView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Işık efekti için üst katman -->
+    <FrameLayout
+        android:id="@+id/effectLayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:visibility="gone">
+
+        <!-- Kısa flaş -->
+        <View
+            android:id="@+id/flashView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#66BBDEFB"
+            android:alpha="0" />
+
+        <!-- Soldan sağa ilerleyen ışık şeridi -->
+        <View
+            android:id="@+id/sweepView"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:alpha="0.0"
+            android:background="@drawable/gradient_sweep" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="center"
+        android:layout_gravity="bottom">
+
+        <Button
+            android:id="@+id/btnPickImage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Görsel Seç" />
+
+        <Space
+            android:layout_width="12dp"
+            android:layout_height="1dp" />
+
+        <Button
+            android:id="@+id/btnPickAudio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Ses Seç" />
+    </LinearLayout>
+
+</FrameLayout>
+
